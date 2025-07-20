@@ -46,8 +46,8 @@ const Summary = () => {
         });
         setDashboardData(response.data);
       } catch (err) {
-        if(!err.response.data.success) {
-          navigate('/login');
+        if (!err.response.data.success) {
+          navigate("/login");
         }
         alert(err.message);
       } finally {
@@ -57,7 +57,7 @@ const Summary = () => {
     fetchDashboardData();
   }, []);
 
-  if(loading) return <div>Loading...</div>
+  if (loading) return <div>Loading...</div>;
 
   return (
     <div className="p-6">
@@ -70,20 +70,20 @@ const Summary = () => {
           <h2 className="text-lg font-semibold">Total Products</h2>
           <p className="text-2xl font-bold">{dashboardData.totalProducts}</p>
         </div>
-        
+
         <div className="bg-green-500 text-white p-4 rounded-lg shadow-md flex flex-col items-center justify-center">
           <h2 className="text-lg font-semibold">Total Stock</h2>
           <p className="text-2xl font-bold">{dashboardData.totalStock}</p>
         </div>
-        
+
         <div className="bg-yellow-500 text-white p-4 rounded-lg shadow-md flex flex-col items-center justify-center">
           <h2 className="text-lg font-semibold">Order Today</h2>
           <p className="text-2xl font-bold">{dashboardData.ordersToday}</p>
         </div>
-        
+
         <div className="bg-purple-500 text-white p-4 rounded-lg shadow-md flex flex-col items-center justify-center">
           <h2 className="text-lg font-semibold">Revenue</h2>
-          <p className="text-2xl font-bold">${dashboardData.revenue}</p>
+          <p className="text-2xl font-bold">£{dashboardData.revenue}</p>
         </div>
       </div>
 
@@ -99,7 +99,9 @@ const Summary = () => {
               {dashboardData.outOfStock.map((product, index) => (
                 <li key={index} className="text-gray-600">
                   {product.name}{" "}
-                  <span className="text-gray-400">({product.category.name})</span>
+                  <span className="text-gray-400">
+                    ({product.category.name})
+                  </span>
                 </li>
               ))}
             </ul>
@@ -114,14 +116,24 @@ const Summary = () => {
             Highest Sale Product
           </h3>
           {dashboardData.highestSaleProduct?.name ? (
-          <div className="text-gray-600">
-            <p><strong>Name:</strong> {dashboardData.highestSaleProduct.name}</p>
-            <p><strong>Category:</strong> {dashboardData.highestSaleProduct.category}</p>
-            <p><strong>Total Units Sold:</strong> {dashboardData.highestSaleProduct.totalQuantity}</p>
-          </div>
-        ) : (
-          <p className="text-gray-500">{dashboardData.highestSaleProduct?.message || 'Loading...'}</p>
-        )}
+            <div className="text-gray-600">
+              <p>
+                <strong>Name:</strong> {dashboardData.highestSaleProduct.name}
+              </p>
+              <p>
+                <strong>Category:</strong>{" "}
+                {dashboardData.highestSaleProduct.category}
+              </p>
+              <p>
+                <strong>Total Units Sold:</strong>{" "}
+                {dashboardData.highestSaleProduct.totalQuantity}
+              </p>
+            </div>
+          ) : (
+            <p className="text-gray-500">
+              {dashboardData.highestSaleProduct?.message || "Loading..."}
+            </p>
+          )}
         </div>
 
         {/* Low Stock Products */}
@@ -134,7 +146,9 @@ const Summary = () => {
               {dashboardData.lowStock.map((product, index) => (
                 <li key={index} className="text-gray-600">
                   <strong>{product.name}</strong> - {product.stock} left{" "}
-                  <span className="text-gray-400">({product.category.name})</span>
+                  <span className="text-gray-400">
+                    ({product.category.name})
+                  </span>
                 </li>
               ))}
             </ul>
