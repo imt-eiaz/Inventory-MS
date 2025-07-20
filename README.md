@@ -39,4 +39,4 @@ To run this project locally, follow these steps:
 
    - Ensure you have Node.js and npm installed on your system before starting.
    - Both the frontend and server must be running simultaneously for the app to work fully.
-   - For MongoDB you shaould have MondoDB Compass installed or setup connection online wiht  Monogodb Atlas. If you don't know how to setup I have videos in my channel you can watch. "Code With Yousaf"
+   - For MongoDB you shaould have MondoDB Compass installed or setup connection online wiht  Monogodb Atlas.
