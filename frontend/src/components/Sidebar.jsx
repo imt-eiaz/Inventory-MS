@@ -88,7 +88,7 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <div className="fixed h-screen bg-gray-800 text-white w-16 md:w-64 flex flex-col">
+    <div className="fixed h-screen bg-green-600 text-white w-16 md:w-64 flex flex-col">
       {/* Logo or Branding (optional) */}
       <div className="h-16 flex items-center justify-center md:justify-start md:pl-6">
         <span className="hidden md:block text-xl font-bold">
