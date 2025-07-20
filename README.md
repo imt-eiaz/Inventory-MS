@@ -1,8 +1,5 @@
 # MERN Stack Inventory Management System
 
-## Demo
-https://youtu.be/7BPNwyeDvSY
-
 ## Installation
 To run this project locally, follow these steps:
 
