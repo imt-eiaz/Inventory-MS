@@ -11,10 +11,10 @@ const register = async () => {
     connectToMongoDB();
     const hashedPassword = await bcrypt.hash("admin", 10);
     const newUser = new User({
-      name: "admin",
-      email: "admin@gmail.com",
+      name: "phonebox",
+      email: "imatphonebox@gmail.com",
       password: hashedPassword,
-      address: "KBL",
+      address: "Cirencester",
       role: "admin",
     });
     await newUser.save();
