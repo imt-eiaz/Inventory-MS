@@ -40,6 +40,12 @@ const Sidebar = () => {
       isParent: false,
     },
     {
+      name: "Customers",
+      path: "/admin-dashboard/customer",
+      icon: <FaUsers />,
+      isParent: false,
+    },
+    {
       name: "Users",
       path: "/admin-dashboard/users",
       icon: <FaUsers />,

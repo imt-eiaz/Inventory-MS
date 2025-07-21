@@ -9,6 +9,7 @@ import ProtectedRoute from "./utils/ProtectedRoute";
 import Products from "./components/Products";
 import Categories from "./components/Categories";
 import Suppliers from "./components/Suppliers";
+import Customers from "./components/Customers";
 import Users from "./components/Users";
 import Logout from "./components/Logout";
 import EmployeeProducts from "./components/EmployeeProducts";
@@ -21,6 +22,7 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Root />} />
         <Route path="/login" element={<Login />} />
+
         <Route
           path="/admin-dashboard"
           element={
@@ -37,18 +39,26 @@ const App = () => (
               </ProtectedRoute>
             }
           ></Route>
+
           <Route
             path="/admin-dashboard/products"
             element={<Products />}
           ></Route>
+
           <Route
             path="/admin-dashboard/categories"
             element={<Categories />}
           ></Route>
+
           <Route
             path="/admin-dashboard/supplier"
             element={<Suppliers />}
           ></Route>
+          <Route
+            path="/admin-dashboard/customer"
+            element={<Customers />}
+          ></Route>
+
           <Route
             path="/admin-dashboard/orders"
             element={
@@ -57,8 +67,13 @@ const App = () => (
               </ProtectedRoute>
             }
           ></Route>
+
           <Route path="/admin-dashboard/users" element={<Users />}></Route>
-          <Route path="/admin-dashboard/profile" element={<Profile></Profile>}></Route>
+
+          <Route
+            path="/admin-dashboard/profile"
+            element={<Profile></Profile>}
+          ></Route>
         </Route>
 
         <Route
@@ -73,6 +88,7 @@ const App = () => (
           <Route path="orders" element={<Orders />}></Route>
           <Route path="profile" element={<Profile />}></Route>
         </Route>
+
         <Route path="/logout" element={<Logout />}></Route>
         <Route
           path="/unauthorized"
