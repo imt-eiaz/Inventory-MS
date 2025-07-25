@@ -167,7 +167,7 @@ const Customers = () => {
               <th className="p-2 text-left">ID</th>
               <th className="p-2 text-left">Name</th>
               <th className="p-2 text-left">Email</th>
-              <th className="p-2 text-left">Phone</th>
+              <th className="p-2 text-left">Phone Number</th>
               <th className="p-2 text-left">Address</th>
               <th className="p-2 text-left">Actions</th>
             </tr>
